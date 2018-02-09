@@ -33,6 +33,7 @@ void TcpListener::Run()
 		// Create a listening socket
 		int listening = CreateSocket();
 		if (listening < 0) {
+			std::cout << "Cannot create listening socket" << std::endl;
 			break;
 		}
 
@@ -62,6 +63,7 @@ int TcpListener::CreateSocket()
 {
 	int listening = socket(AF_INET, SOCK_STREAM, 0);
 	if (listening < 0) {
+		std::cout << "Cannot create socket" << std::endl;
 		exit(1);
 	}
 	else {
@@ -73,7 +75,8 @@ int TcpListener::CreateSocket()
 		// Binding socket
 		int bindOk = bind(listening, (sockaddr*)&hint, sizeof(hint));
 		if (bindOk > 0) {
-			int listenOk = listen(listening, SOMAXCONN);
+			std::cout << "Cannot bind socket" << std::endl;
+			int listenOk = listen(listening, 1);
 			if (listenOk < 0) {
 				return -1;
 			}
