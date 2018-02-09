@@ -60,7 +60,6 @@ int main() {
 		//cout << *(a + 0 * M1 + 0) << ", " << *(a + 0 * M1 + 1) << ", " << *(a + 0 * M1 + 2) << endl;
 		for (int i = 0; i < N1; ++i) {
 			for (int j = 0; j < M1; ++j) {
-				*(a + i * M1 + j) = rand() % 10;
 				cout << *(a + i * M1 + j) << '\t';
 			}
 			cout << endl;
