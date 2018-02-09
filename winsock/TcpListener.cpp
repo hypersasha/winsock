@@ -8,7 +8,7 @@ TcpListener::TcpListener(std::string ipAddress, int port, MessageRecievedHandler
 
 TcpListener::~TcpListener()
 {
-	CleanUp();
+	
 }
 
 // Send a message to the specified client
