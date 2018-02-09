@@ -53,9 +53,8 @@ int main() {
 
 	char buffer[4096];
 	while (true) {
-		int income[3];
-		int bytesReceived = recv(server, buffer, sizeof(a), 0);
-		memcpy(&a, buffer, sizeof(a));
+		int bytesReceived = recv(server, buffer, (M1*N1) * sizeof(a), 0);
+		memcpy((void*)a, (const void*)buffer, (M1*N1) * sizeof(a));
 
 		cout << "Recieved income:" << bytesReceived << endl;
 		//cout << *(a + 0 * M1 + 0) << ", " << *(a + 0 * M1 + 1) << ", " << *(a + 0 * M1 + 2) << endl;
@@ -76,9 +75,6 @@ int main() {
 			cout << "Client disconnected..." << endl;
 			break;
 		}
-
-		int arr[3];
-
 		// Echo message back to client
 		// send(server, buffer, bytesReceived + 1, 0);
 	}
