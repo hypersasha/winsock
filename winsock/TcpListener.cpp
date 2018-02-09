@@ -75,13 +75,14 @@ int TcpListener::CreateSocket()
 		// Binding socket
 		int bindOk = bind(listening, (sockaddr*)&hint, sizeof(hint));
 		if (bindOk > 0) {
-			std::cout << "Cannot bind socket" << std::endl;
 			int listenOk = listen(listening, 1);
 			if (listenOk < 0) {
+				std::cout << "Cannot listen socket" << std::endl;
 				return -1;
 			}
 		}
 		else {
+			std::cout << "Cannot bind socket" << std::endl;
 			return -1;
 		}
 	}
