@@ -10,7 +10,7 @@ void OnMessageRecieved(TcpListener* listener, int client, string msg);
 int main() {
 	TcpListener server("127.0.0.1", 2000, OnMessageRecieved);
 
-	if (server.Init) {
+	if (server.Init()) {
 		server.Run();
 	}
 
