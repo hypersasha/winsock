@@ -62,7 +62,6 @@ int TcpListener::CreateSocket()
 {
 	int listening = socket(AF_INET, SOCK_STREAM, 0);
 	if (listening < 0) {
-		cerr << "Can't create socket" << endl;
 		exit(1);
 	}
 	else {

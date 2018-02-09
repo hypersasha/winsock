@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TcpListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TcpListener.h" />
