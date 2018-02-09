@@ -1,4 +1,28 @@
+#include <iostream>
 #include <string>
+
+#include "TcpListener.h"
+
+using namespace std;
+
+void OnMessageRecieved(TcpListener* listener, int client, string msg);
+
+int main() {
+	TcpListener server("127.0.0.1", 2000, OnMessageRecieved);
+
+	if (server.Init) {
+		server.Run();
+	}
+
+}
+
+void OnMessageRecieved(TcpListener* listener, int client, string msg)
+{
+	listener->Send(client, msg);
+}
+
+
+/*#include <string>
 #include <array>
 #include <memory>
 #include <type_traits>
@@ -83,3 +107,4 @@ int main() {
 	return 0;
 
 }
+*/
