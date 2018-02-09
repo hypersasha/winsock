@@ -13,6 +13,9 @@ int main() {
 	if (server.Init()) {
 		server.Run();
 	}
+	else {
+		cout << "error in server init" << endl;
+	}
 
 }
 
